@@ -1,12 +1,10 @@
 # personal state — NEVER commit
 logbook/
-
+archive/
 # secrets / local config
 .env
-
 # macOS
 .DS_Store
-
 # Editor artifacts
 [._]*.sw[a-p]
 *.bak

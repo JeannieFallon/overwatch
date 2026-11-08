@@ -1,0 +1,17 @@
+# Hot tier: this week. The agent edits this freely. Keep it small.
+updated: null          # YYYY-MM-DDTHH:MM
+week_of: null          # Monday, YYYY-MM-DD
+focus: null            # the single most important next thing
+
+queue:                 # prioritized, top = next
+  # - id: q1
+  #   tag: school
+  #   item: take OS exam
+  #   status: next     # next | active | blocked
+  #   due: 2026-11-15  # optional
+
+todos: []              # stubbed for later, not yet prioritized: "[tag] item"
+open_loops: []         # waiting on someone or a decision: "[tag] item"
+
+dates:                 # upcoming fixed dates, soonest first
+  # - {date: 2026-11-15, tag: money, what: equity vests}

@@ -39,13 +39,25 @@ else
   bad "Anthropic API blocked or unreachable (HTTP ${code:-none})"
 fi
 
-echo "== 3. Agent config/skills unchanged (host-side git check) =="
-tracked=$(git -C "$REPO" ls-files -- .claude CLAUDE.md 2>/dev/null)
-if [ -z "$tracked" ] && [ ! -e "$REPO/.claude" ] && [ ! -e "$REPO/CLAUDE.md" ]; then
-  skip "no .claude/ or CLAUDE.md yet — nothing to protect"
+echo "== 3. Read-only config mounts (real write attempts) =="
+probe="$REPO/.ow-write-probe"
+if [ "$(inbox "touch '$probe' && rm -f '$probe' && echo OK")" = "OK" ]; then
+  ok "project folder writable (logbook works)"
 else
-  changed=$(git -C "$REPO" status --porcelain -- .claude CLAUDE.md 2>/dev/null)
-  [ -z "$changed" ] && ok "no changes to .claude/ or CLAUDE.md" || { bad "config changed:"; echo "$changed"; }
+  bad "project folder not writable"
 fi
+for who in "" "sudo"; do
+  label=${who:+" (with sudo)"}
+  if [ -e "$REPO/CLAUDE.md" ]; then
+    r=$(inbox "$who touch '$REPO/CLAUDE.md' && echo WROTE || echo DENIED")
+    [ "$r" = "DENIED" ] && ok "CLAUDE.md write refused$label" || bad "CLAUDE.md WRITABLE$label"
+  else skip "CLAUDE.md does not exist"; fi
+  if [ -d "$REPO/.claude" ]; then
+    t="$REPO/.claude/.ow-write-probe"
+    r=$(inbox "$who touch '$t' && echo WROTE || echo DENIED")
+    if [ "$r" = "DENIED" ]; then ok ".claude/ write refused$label"
+    else bad ".claude/ WRITABLE$label"; inbox "$who rm -f '$t'"; rm -f "$t"; fi
+  else skip ".claude/ does not exist"; fi
+done
 
 echo; echo "Result: $pass passed, $fail failed"; [ "$fail" -eq 0 ]

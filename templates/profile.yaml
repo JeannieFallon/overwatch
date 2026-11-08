@@ -1,0 +1,10 @@
+# Durable facts about the human. Private: lives in logbook/, never committed.
+# The agent fills this on first run and updates it only when facts change.
+name: null
+timezone: null
+
+communication: []      # overrides CLAUDE.md defaults, e.g. "one tiny step at a time"
+never_raise: []        # topics the agent must not bring up
+what_works: []         # e.g. "cool water + heat on gut when heart rate is high"
+what_doesnt: []        # e.g. "slow-exhale breathing at high heart rate"
+context: []            # durable background the agent needs

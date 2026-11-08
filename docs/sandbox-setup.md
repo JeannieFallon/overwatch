@@ -40,16 +40,18 @@ Troubleshooting:
 
 ## 4. Start the sandbox
 
-From your clone of this repo:
+Always start it with the launcher, from your clone of this repo:
 
 ```bash
-sbx run claude ~/Develop/overwatch
+scripts/run.sh
 ```
+
+The launcher mounts the project read-write but `CLAUDE.md` and `.claude/` **read-only**, so the agent cannot change its own rules or skills. Mounts are fixed when the sandbox is created. If you ever started it another way, remove it first (`sbx rm claude-overwatch`) and re-run the launcher.
 
 On first run, `sbx` asks for a network policy. Choose **2. Balanced** (default deny, common dev sites allowed). You can audit and tighten it later:
 
 ```bash
-sbx policy ls                  # list allowed hosts
+sbx policy ls                    # list allowed hosts
 sbx policy allow network <host>  # allow one more
 ```
 
@@ -79,11 +81,12 @@ From a normal Mac terminal (not inside Claude), with the sandbox running:
 scripts/validate-sandbox.sh
 ```
 
-Expected: all checks PASS (the config check shows SKIP until `CLAUDE.md` or `.claude/` exists).
+It checks the host filesystem, network egress, the read-only config mounts (with and without `sudo`), and that committed config is unchanged. Expected: all PASS.
 
 ## Everyday commands
 
 ```bash
+scripts/run.sh               # start or re-attach
 sbx ls                       # list sandboxes
 sbx stop claude-overwatch    # stop (keeps state)
 sbx rm claude-overwatch      # delete the VM and everything inside it, including the Claude login
