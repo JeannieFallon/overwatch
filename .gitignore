@@ -1,7 +1,13 @@
-# personal state — never commit
-logbook/20*/
+# personal state — NEVER commit
+logbook/
+
 # secrets / local config
 .env
-.claude-config/
+
 # macOS
 .DS_Store
+
+# Editor artifacts
+[._]*.sw[a-p]
+*.bak
+*~
