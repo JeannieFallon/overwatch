@@ -48,13 +48,32 @@ A short interview, one question at a time. If you already have a context summary
 
 You can also just say "check in" or "wrap up."
 
+## Security boundaries
+
+Docker Sandboxes runs Claude Code with no per-action permission prompts (`--dangerously-skip-permissions`, shown as "bypass permissions on"). That's by design: safety comes from what the agent **cannot reach**, not from asking before each step.
+
+| Boundary | Enforced by | The agent cannot |
+|---|---|---|
+| Kernel | Docker Sandboxes microVM | touch macOS processes or the host kernel |
+| Filesystem | sbx workspace mount | see anything outside this repo: no home folder, no `~/.ssh` |
+| Network | sbx Balanced policy (default deny) | reach arbitrary sites or your local network |
+| **Rules and skills** | **read-only mounts in `scripts/run.sh`** (our addition) | **edit `CLAUDE.md` or anything in `.claude/`** |
+
+**Why the read-only mounts matter.** `CLAUDE.md` and the skills are the agent's instructions. A rule like "never edit your own rules" is only text, and an agent can ignore or rewrite text. The read-only mount moves that guarantee out of the prompt and into the filesystem: writes fail even with `sudo`. To change the rules, edit them on your Mac, then restart Claude.
+
+`scripts/validate-sandbox.sh` checks every row from the host, outside the agent's reach, including real write attempts against the read-only files.
+
+**Known limits**
+- The rest of the repo is writable from inside the sandbox, including `scripts/`, `.git/`, and `.gitignore`, which take effect on the host. Hardening is planned.
+- The Balanced policy allows common developer sites. Tighter egress is planned.
+
 ## Privacy
 `logbook/` and `archive/` hold personal state. They are **never committed or published**. This repo contains only the tooling.
 
 ## How it works
-- **`CLAUDE.md`**: the agent's standing orders. Mounted read-only in the sandbox.
-- **Skills** (`.claude/skills/`, also read-only): `onboard` (first-run interview), `checkin` (session sweep), `rollover` (save + weekly reset), `compact` (monthly condensing).
-- **Memory tiers**, all agent-managed:
+- **`CLAUDE.md`**: the agent's standing orders.
+- **Skills** (`.claude/skills/`): `onboard` (first-run interview), `checkin` (session sweep), `rollover` (save + weekly reset), `compact` (monthly condensing).
+- **Memory**: three agent-managed tiers plus an optional archive. Full design: [`docs/memory.md`](docs/memory.md).
 
 ```
 logbook/
@@ -68,6 +87,10 @@ archive/
 ```
 
 `templates/` holds the empty starting files the agent copies during onboarding.
+
+## Docs
+- [`docs/sandbox-setup.md`](docs/sandbox-setup.md): installing `sbx` and signing in
+- [`docs/memory.md`](docs/memory.md): the memory model
 
 ## Scripts
 - `scripts/run.sh`: starts or reattaches to the sandbox, and stops it when you exit
