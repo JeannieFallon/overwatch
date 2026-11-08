@@ -5,10 +5,8 @@ description: Start-of-session sweep. Use when a session begins, or the human say
 
 # Check-in
 
-## First run (no `logbook/state.yaml` or `logbook/profile.yaml`)
-1. Copy `templates/profile.yaml` → `logbook/profile.yaml` and `templates/state.yaml` → `logbook/state.yaml` (create `logbook/` if needed).
-2. Ask the human once: "Paste any context summary you have (e.g. a YAML rollover), or say skip."
-3. If they paste one, split it: durable facts about the person → `profile.yaml`; current tasks, dates, open loops → `state.yaml`; dated events → today's daily log as tagged lines. Discard anything stale. Confirm in one line what you loaded.
+## First run
+If `logbook/profile.yaml` or `logbook/state.yaml` is missing, run the `onboard` skill instead and stop here.
 
 ## Normal check-in
 1. Read `profile.yaml` and `state.yaml`.
