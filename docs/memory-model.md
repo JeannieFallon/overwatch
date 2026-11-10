@@ -96,7 +96,7 @@ One fact per line means a grep returns complete facts, never half a paragraph. T
 
 ```mermaid
 flowchart LR
-    S[Session] -->|checkin / rollover| H[Hot<br/>state.yaml]
+    S[Session] -->|login / logout| H[Hot<br/>state.yaml]
     S -->|facts as they happen| W[Warm<br/>daily logs]
     H -->|weekly reset:<br/>drop done items| H
     W -->|compact, monthly| C[Cold<br/>month file]
@@ -104,7 +104,7 @@ flowchart LR
     A -.->|pointer line| C
 ```
 
-- **During a session** (`checkin`, `rollover`): the agent updates `state.yaml` and appends facts to today's log.
+- **During a session** (`login`, `logout`): the agent updates `state.yaml` and appends facts to today's log.
 - **Weekly reset** (first session after Sunday): `state.yaml` drops finished and stale items, sets a new `week_of`, and carries unfinished work forward unchanged. Nothing is lost; finished work is already in the logs.
 - **Monthly compaction** (`compact`): one month of daily logs is condensed into one month file. The agent lists anything too rich to keep as a single line and asks the human which to archive. Only after the human confirms the result is the daily folder deleted.
 

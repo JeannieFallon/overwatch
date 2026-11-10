@@ -52,11 +52,9 @@ A short interview, one question at a time. If you already have a context summary
 
 | Command | When |
 |---|---|
-| `/checkin` | start of a session |
-| `/rollover` | end of a session or day |
+| `/login` | start of a session |
+| `/logout` | end of a session or day |
 | `/compact` | monthly; the agent reminds you |
-
-You can also just say "check in" or "wrap up."
 
 ## Security boundaries
 
@@ -93,7 +91,7 @@ Docker Sandboxes runs Claude Code with no per-action permission prompts (`--dang
 ## How it works
 - **`CLAUDE.md`**: the agent's standing orders.
 - **`.claude/settings.json`**: turns off web access, artifacts, and connectors.
-- **Skills** (`.claude/skills/`): `onboard` (first-run interview), `checkin` (session sweep), `rollover` (save + weekly reset), `compact` (monthly condensing).
+- **Skills** (`.claude/skills/`): `onboard` (first-run interview), `login` (session sweep), `logout` (save + weekly reset), `compact` (monthly condensing).
 - **Memory**: three agent-managed tiers plus an optional archive. Full design: [`docs/memory.md`](docs/memory.md).
 
 ```

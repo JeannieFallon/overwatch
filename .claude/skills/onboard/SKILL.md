@@ -42,4 +42,4 @@ Keep the human's own words. Don't add facts they didn't say.
 - Add one line to today's daily log: `- HH:MM [overwatch] note: onboarded`.
 - Reply with two lines only:
   1. What was saved, in one sentence.
-  2. "From now on: /checkin to start a session, /rollover to wrap up."
+  2. "From now on: /login to start a session, /logout to wrap up."

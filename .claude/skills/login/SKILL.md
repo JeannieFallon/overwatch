@@ -1,14 +1,14 @@
 ---
-name: checkin
-description: Start-of-session sweep. Use when a session begins, or the human says check in, sweep, clear rooms, or "where are we". Clears one topic at a time and updates the hot state.
+name: login
+description: Start-of-session sweep. Use when a session begins, or the human says log in, sweep, clear rooms, or "where are we". Clears one topic at a time and updates the hot state.
 ---
 
-# Check-in
+# Login
 
 ## First run
 If `logbook/profile.yaml` or `logbook/state.yaml` is missing, run the `onboard` skill instead and stop here.
 
-## Normal check-in
+## Normal login
 1. Read `profile.yaml` and `state.yaml`.
 2. Open with one line: today's date, the current `focus`, and the nearest date in `dates`.
 3. Sweep topics **one at a time**, in the order the human raises them. For each:

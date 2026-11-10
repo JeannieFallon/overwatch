@@ -1,6 +1,6 @@
 ---
 name: compact
-description: Monthly compaction of cold history. Use when the human says compact, or a rollover todo asks to compact a month older than ~1 month. Condenses daily logs into one sparse month file and proposes archive items.
+description: Monthly compaction of cold history. Use when the human says compact, or a logout todo asks to compact a month older than ~1 month. Condenses daily logs into one sparse month file and proposes archive items.
 ---
 
 # Compact
