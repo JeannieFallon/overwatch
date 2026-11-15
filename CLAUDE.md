@@ -50,6 +50,7 @@ Defaults (`profile.yaml` overrides):
 
 ## Skills
 - `onboard`: initial one-time project start
-- `login`: start of a session or "let's sweep": clear topics one at a time.
+- `login`: start of a session; hands off to `sweep` if there are topics to clear.
+- `sweep`: any time, "clear the rooms": clear topics one at a time.
 - `logout`: end of a session/day, or new week: write logs, refresh `state.yaml`.
 - `compact`: monthly, or when asked: condense cold months, propose archive items.
