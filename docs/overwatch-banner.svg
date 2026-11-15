@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 384" width="100%" role="img" aria-labelledby="t">
+  <title id="t">Overwatch: a watcher above six parallel threads; one point of light moves through them one thread at a time, leaving a trail</title>
+  <rect width="1280" height="384" rx="14" fill="#000000"/>
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="0.35" stop-color="#C9D6E6" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="litC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C4CBD3"/></linearGradient>
+    <linearGradient id="shdC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9D0D8"/><stop offset="1" stop-color="#7D8691"/></linearGradient>
+    <linearGradient id="litO" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8ECF0"/><stop offset="1" stop-color="#A3ABB5"/></linearGradient>
+    <linearGradient id="shdO" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9B1BA"/><stop offset="1" stop-color="#5C6570"/></linearGradient>
+  </defs>
+  <circle cx="640" cy="128" r="170" fill="url(#glow)"/>
+  <g stroke="#FFFFFF" stroke-width="0.6" opacity="0.22">
+    <line x1="640" y1="232" x2="360" y2="354"/>
+    <line x1="640" y1="232" x2="430" y2="354"/>
+    <line x1="640" y1="232" x2="500" y2="354"/>
+    <line x1="640" y1="232" x2="570" y2="354"/>
+    <line x1="640" y1="232" x2="640" y2="354"/>
+    <line x1="640" y1="232" x2="710" y2="354"/>
+    <line x1="640" y1="232" x2="780" y2="354"/>
+    <line x1="640" y1="232" x2="850" y2="354"/>
+    <line x1="640" y1="232" x2="920" y2="354"/>
+  </g>
+  <g stroke-width="1.2" stroke-linecap="round">
+    <line x1="48" y1="264" x2="1232" y2="264" stroke="#B4D7FF"/>
+    <line x1="48" y1="282" x2="1232" y2="282" stroke="#86BBFF"/>
+    <line x1="48" y1="300" x2="1232" y2="300" stroke="#5A9BF6"/>
+    <line x1="48" y1="318" x2="1232" y2="318" stroke="#3B7FE6"/>
+    <line x1="48" y1="336" x2="1232" y2="336" stroke="#2766CC"/>
+    <line x1="48" y1="354" x2="1232" y2="354" stroke="#1C52AD"/>
+  </g>
+  <circle cx="130" cy="264" r="2.6" fill="#000000" stroke="#B4D7FF" stroke-width="1.2"/>
+  <circle cx="300" cy="264" r="2.6" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="690" cy="264" r="2.6" fill="#000000" stroke="#B4D7FF" stroke-width="1.2"/>
+  <circle cx="1110" cy="264" r="2.6" fill="#000000" stroke="#B4D7FF" stroke-width="1.2"/>
+  <circle cx="250" cy="282" r="2.6" fill="#000000" stroke="#86BBFF" stroke-width="1.2"/>
+  <circle cx="620" cy="282" r="2.6" fill="#000000" stroke="#86BBFF" stroke-width="1.2"/>
+  <circle cx="700" cy="282" r="2.6" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="980" cy="282" r="2.6" fill="#000000" stroke="#86BBFF" stroke-width="1.2"/>
+  <circle cx="110" cy="300" r="2.6" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="470" cy="300" r="2.6" fill="#000000" stroke="#5A9BF6" stroke-width="1.2"/>
+  <circle cx="960" cy="300" r="2.6" fill="#000000" stroke="#5A9BF6" stroke-width="1.2"/>
+  <circle cx="1160" cy="300" r="2.6" fill="#000000" stroke="#5A9BF6" stroke-width="1.2"/>
+  <circle cx="160" cy="318" r="2.6" fill="#000000" stroke="#3B7FE6" stroke-width="1.2"/>
+  <circle cx="450" cy="318" r="2.6" fill="#000000" stroke="#3B7FE6" stroke-width="1.2"/>
+  <circle cx="520" cy="318" r="2.6" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="860" cy="318" r="2.6" fill="#000000" stroke="#3B7FE6" stroke-width="1.2"/>
+  <circle cx="330" cy="336" r="2.6" fill="#000000" stroke="#2766CC" stroke-width="1.2"/>
+  <circle cx="800" cy="336" r="2.6" fill="#000000" stroke="#2766CC" stroke-width="1.2"/>
+  <circle cx="870" cy="336" r="2.6" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="1080" cy="336" r="2.6" fill="#000000" stroke="#2766CC" stroke-width="1.2"/>
+  <circle cx="200" cy="354" r="2.6" fill="#000000" stroke="#1C52AD" stroke-width="1.2"/>
+  <circle cx="560" cy="354" r="2.6" fill="#000000" stroke="#1C52AD" stroke-width="1.2"/>
+  <circle cx="1000" cy="354" r="2.6" fill="#000000" stroke="#1C52AD" stroke-width="1.2"/>
+  <circle cx="1190" cy="354" r="2.6" fill="#000000" stroke="#1C52AD" stroke-width="1.2"/>
+  <path d="M48,300 H210 C246.0,300 246.0,264 282,264 H390 C426.0,264 426.0,318 462,318 H570 C606.0,318 606.0,282 642,282 H745 C781.0,282 781.0,336 817,336 H905 C941.0,336 941.0,300 977,300 H1030" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1030" cy="300" r="8" fill="none" stroke="#FFFFFF" stroke-width="0.7" opacity="0.45"/>
+  <circle cx="1030" cy="300" r="3.6" fill="#FFFFFF"/>
+  <g>
+    <path d="M640.00,128.00 L682.43,85.57 L653.00,128.00 Z" fill="url(#litO)"/>
+    <path d="M640.00,128.00 L682.43,85.57 L640.00,115.00 Z" fill="url(#shdO)"/>
+    <path d="M640.00,128.00 L682.43,170.43 L640.00,141.00 Z" fill="url(#litO)"/>
+    <path d="M640.00,128.00 L682.43,170.43 L653.00,128.00 Z" fill="url(#shdO)"/>
+    <path d="M640.00,128.00 L597.57,170.43 L627.00,128.00 Z" fill="url(#litO)"/>
+    <path d="M640.00,128.00 L597.57,170.43 L640.00,141.00 Z" fill="url(#shdO)"/>
+    <path d="M640.00,128.00 L597.57,85.57 L640.00,115.00 Z" fill="url(#litO)"/>
+    <path d="M640.00,128.00 L597.57,85.57 L627.00,128.00 Z" fill="url(#shdO)"/>
+    <path d="M640.00,128.00 L640.00,32.00 L652.02,115.98 Z" fill="url(#litC)"/>
+    <path d="M640.00,128.00 L640.00,32.00 L627.98,115.98 Z" fill="url(#shdC)"/>
+    <path d="M640.00,128.00 L736.00,128.00 L652.02,140.02 Z" fill="url(#litC)"/>
+    <path d="M640.00,128.00 L736.00,128.00 L652.02,115.98 Z" fill="url(#shdC)"/>
+    <path d="M640.00,128.00 L640.00,224.00 L627.98,140.02 Z" fill="url(#litC)"/>
+    <path d="M640.00,128.00 L640.00,224.00 L652.02,140.02 Z" fill="url(#shdC)"/>
+    <path d="M640.00,128.00 L544.00,128.00 L627.98,115.98 Z" fill="url(#litC)"/>
+    <path d="M640.00,128.00 L544.00,128.00 L627.98,140.02 Z" fill="url(#shdC)"/>
+  </g>
+  <circle cx="640" cy="128" r="6" fill="#000000" stroke="#FFFFFF" stroke-width="1.2"/>
+</svg>
