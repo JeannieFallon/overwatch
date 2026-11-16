@@ -53,4 +53,4 @@ Defaults (`profile.yaml` overrides):
 - `checkin`: start of a session; hands off to `sweep` if there are topics to clear.
 - `sweep`: any time, "clear the rooms": clear topics one at a time.
 - `checkout`: end of a session/day, or new week: write logs, refresh `state.yaml`.
-- `compact`: monthly, or when asked: condense cold months, propose archive items.
+- `archive`: monthly, or when asked: condense cold months, propose archive items. `archive/` is your historical record to reference, not something the human is expected to browse.

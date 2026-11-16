@@ -16,7 +16,7 @@
 | `checkin` | start of a session: today, current focus, nearest date |
 | `sweep` | clear the rooms, one topic at a time |
 | `checkout` | writes the day's log and refreshes state; handles the weekly reset |
-| `compact` | monthly: condenses old daily logs, proposes archive items |
+| `archive` | monthly: condenses old daily logs, proposes archive items |
 
 ## Scripts
 

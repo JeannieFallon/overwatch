@@ -99,14 +99,14 @@ flowchart LR
     S[Session] -->|checkin / checkout| H[Hot<br/>state.yaml]
     S -->|facts as they happen| W[Warm<br/>daily logs]
     H -->|weekly reset:<br/>drop done items| H
-    W -->|compact, monthly| C[Cold<br/>month file]
-    W -.->|compact proposes,<br/>human approves| A[Archive<br/>topic doc]
+    W -->|archive skill, monthly| C[Cold<br/>month file]
+    W -.->|archive skill proposes,<br/>human approves| A[Archive<br/>topic doc]
     A -.->|pointer line| C
 ```
 
 - **During a session** (`checkin`, `checkout`): the agent updates `state.yaml` and appends facts to today's log.
 - **Weekly reset** (first session after Sunday): `state.yaml` drops finished and stale items, sets a new `week_of`, and carries unfinished work forward unchanged. Nothing is lost; finished work is already in the logs.
-- **Monthly compaction** (`compact`): one month of daily logs is condensed into one month file. The agent lists anything too rich to keep as a single line and asks the human which to archive. Only after the human confirms the result is the daily folder deleted.
+- **Monthly compaction** (`archive`): one month of daily logs is condensed into one month file. The agent lists anything too rich to keep as a single line and asks the human which to archive. Only after the human confirms the result is the daily folder deleted.
 
 Every transition that destroys detail needs a human yes. Everything else the agent does on its own.
 

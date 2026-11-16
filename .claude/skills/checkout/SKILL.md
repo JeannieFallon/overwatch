@@ -18,4 +18,4 @@ description: End-of-session or end-of-day save, and the weekly reset. Use when t
 1. Set `week_of` to this Monday.
 2. Drop anything in `state.yaml` that is done or no longer relevant; it is already in the logs.
 3. Carry unfinished items forward unchanged. Do not re-prioritize without the human.
-4. If any month is now older than ~1 month and not yet compacted, add a todo: "run compact for YYYY-MM".
+4. If any month is now older than ~1 month and not yet compacted, add a todo: "run archive for YYYY-MM".

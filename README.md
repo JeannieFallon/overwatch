@@ -44,7 +44,7 @@ At the Claude prompt:
 | `/checkin` | start of a session |
 | `/sweep` | any time: clear the rooms, one topic at a time |
 | `/checkout` | end of a session or day |
-| `/compact` | monthly; the agent reminds you |
+| `/archive` | monthly; the agent reminds you |
 
 Exiting Claude stops the sandbox. Run `./scripts/run.sh` again to reattach.
 
