@@ -13,9 +13,9 @@
 | Skill | What it does |
 |---|---|
 | `onboard` | first-run interview; creates your profile and this week's state |
-| `login` | start of a session: today, current focus, nearest date |
+| `checkin` | start of a session: today, current focus, nearest date |
 | `sweep` | clear the rooms, one topic at a time |
-| `logout` | writes the day's log and refreshes state; handles the weekly reset |
+| `checkout` | writes the day's log and refreshes state; handles the weekly reset |
 | `compact` | monthly: condenses old daily logs, proposes archive items |
 
 ## Scripts

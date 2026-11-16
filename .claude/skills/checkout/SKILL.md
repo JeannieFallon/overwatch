@@ -1,11 +1,11 @@
 ---
-name: logout
-description: End-of-session or end-of-day save, and the weekly reset. Use when the human says roll over, wrap up, done for today, good night, or when a new week (Monday) has started since state.yaml was last updated.
+name: checkout
+description: End-of-session or end-of-day save, and the weekly reset. Use when the human says check out, roll over, wrap up, done for today, good night, or when a new week (Monday) has started since state.yaml was last updated.
 ---
 
-# Logout
+# Check out
 
-## Every logout
+## Every check-out
 1. Make sure everything that happened this session is in today's daily log as tagged lines. Add missing lines; don't duplicate.
 2. Refresh `logbook/state.yaml`:
    - `updated` = now.
@@ -14,7 +14,7 @@ description: End-of-session or end-of-day save, and the weekly reset. Use when t
    - Keep `todos`, `open_loops`, `dates` current. Remove past dates.
 3. Reply in one line: what tomorrow's first step is. Nothing else.
 
-## Weekly reset (first logout or check-in after Sunday)
+## Weekly reset (first check-in or check-out after Sunday)
 1. Set `week_of` to this Monday.
 2. Drop anything in `state.yaml` that is done or no longer relevant; it is already in the logs.
 3. Carry unfinished items forward unchanged. Do not re-prioritize without the human.

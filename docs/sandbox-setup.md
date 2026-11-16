@@ -38,7 +38,19 @@ Troubleshooting:
 - **Terminal hangs or the browser shows "not found" after sign-in:** press `Ctrl+C`, then run `sbx login` again. It completes immediately once the browser session exists.
 - **Login fails right after creating an account:** check your email for a Docker verification link first.
 
-## 4. Start the sandbox
+## 4. Lock down the network
+
+From a normal Mac terminal, with Claude closed:
+
+```bash
+scripts/lockdown.sh
+```
+
+When `sbx` asks for a network policy, choose **3. Locked Down** (default deny, nothing allowed). The script then allows only the two Anthropic hosts Overwatch needs and denies claude.ai connectors. See [`security.md`](security.md) for why.
+
+The policy is global: it applies to every local sandbox on this Mac. If you already picked another policy (for example **2. Balanced**), just run the script again. It resets the policy and asks again. Re-run it any time; it rebuilds the policy from scratch.
+
+## 5. Start the sandbox
 
 Always start it with the launcher, from your clone of this repo:
 
@@ -48,14 +60,7 @@ scripts/run.sh
 
 The launcher mounts the project read-write but `CLAUDE.md` and `.claude/` **read-only**, so the agent cannot change its own rules or skills. Mounts are fixed when the sandbox is created. If you ever started it another way, remove it first (`sbx rm claude-overwatch`) and re-run the launcher.
 
-On first run, `sbx` asks for a network policy. Choose **2. Balanced** (default deny, common dev sites allowed). You can audit and tighten it later:
-
-```bash
-sbx policy ls                    # list allowed hosts
-sbx policy allow network <host>  # allow one more
-```
-
-## 5. Sign in to Claude inside the sandbox
+## 6. Sign in to Claude inside the sandbox
 
 At the Claude Code prompt:
 
@@ -73,7 +78,7 @@ sbx secret set anthropic
 
 Note: the sandbox ignores your Mac's `~/.claude`. Only project-level config (`CLAUDE.md`, `.claude/`) is visible inside.
 
-## 6. Verify isolation
+## 7. Verify isolation
 
 From a normal Mac terminal (not inside Claude), with the sandbox running:
 
@@ -81,7 +86,7 @@ From a normal Mac terminal (not inside Claude), with the sandbox running:
 scripts/validate-sandbox.sh
 ```
 
-It checks the host filesystem, network egress, the read-only config mounts (with and without `sudo`), and that committed config is unchanged. Expected: all PASS.
+It checks the host filesystem, network egress (only Anthropic reachable), the read-only config mounts (with and without `sudo`), and that committed config is unchanged. Expected: all PASS. If a network check fails, re-run `scripts/lockdown.sh`.
 
 ## Everyday commands
 
