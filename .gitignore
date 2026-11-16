@@ -1,6 +1,6 @@
 # personal state — NEVER commit
-logbook/
-archive/
+/logbook/
+/archive/
 # secrets / local config
 .env
 # macOS
