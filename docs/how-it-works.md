@@ -23,3 +23,4 @@
 - `scripts/lockdown.sh`: limits sandbox network access to Anthropic. Run once; safe to re-run, it rebuilds the policy from scratch. Applies to every local sandbox on the Mac.
 - `scripts/run.sh`: starts or reattaches to the sandbox, and stops it when you exit.
 - `scripts/validate-sandbox.sh`: verifies every security boundary from the host.
+- `scripts/statusline.sh`: Claude Code status line showing the model, effort level, and context tokens used. Enable it inside the sandbox by setting `"statusLine": {"type": "command", "command": "bash <repo>/scripts/statusline.sh"}` in `~/.claude/settings.json`.
